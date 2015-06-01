@@ -1,0 +1,3 @@
+---
+destination: ~/apps/longislandsound
+exclude: [Rakefile]

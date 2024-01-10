@@ -1,49 +1,42 @@
 /* Colours */
 
-#top {
+.top {
   background: #E9E8D5;
 }
 
-#bottom {
+.bottom {
   background: #2E2E2E;
 }
 
 /* Grid */
 
 .container {
+  width: 100%;
   max-width: 1100px;
   margin: 0 auto;
   padding: 2em 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.column {
-  width: 45.4545455%;
-  display: block;
+img { 
+  max-width: 100%;
+  margin-bottom: 2em;
 }
 
-.one {
-  padding-right: 4.5454545%; /* 50px / 1100px */
-  float: left;
+.album-art {
+  max-width: 500px;
 }
 
-.two {
-  padding-left: 4.5454545%; /* 50px / 1100px */
-  float: right;
-}
-
-.three {
-  width: 33%;
-  float: left;
-}
-
-.clear {
-  clear: both;
+.album-details {
+  max-width: 500px;
 }
 
 /* Text */
 
 body {
-  font-family: 'PT Sans';
+  font-family: 'PT Sans', sans-serif;
   font-size: 1.5em;
   color: #ACAB9F;
   text-align: center;
@@ -51,10 +44,10 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: 'Oswald';
+  font-family: 'Oswald', sans-serif;
   letter-spacing: 1.2;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 300;
     
 }
 
@@ -64,34 +57,33 @@ h1,h2 {
 }
 
 h1 {
-  font-size: 3.5em;
+  font-size: 2.65em;
   color: #535353;
 }
 
 h2 {
-  font-size: 5em;
+  margin-top: -0.2em;
+  font-size: 3.72em;
   color: #9A6363;
 }
 
 h3 {
-  font-size: 2em;
+  margin-top: 1em;
+  font-size: 1.8em;
   font-weight: 400;
+  color: #d1d0bf;
 }
 
 h4 {
   color: #9A6363;
-  font-size: 1.5em;
-  margin: 0 0 1.2em 0;
+  font-size: 3em;
+  margin-bottom: 0.8em;
 } 
 
 h5 {
   color: #989892;
-  margin: 0.5em 0 0 0;
-  font-size: 1.3em;
-}
-
-p {
-  letter-spacing: 2;
+  margin-bottom: 1em;
+  font-size: 1.6em;
 }
 
 a {
@@ -106,8 +98,9 @@ a {
   height: 5em;
   line-height: 5em;
   font-weight: 600;
-  margin: 3em 0 1em 0;
+  margin: 3em 0 2em 0;
   text-transform: uppercase;
+  letter-spacing: 0.16em;
 }
 
 a:hover .store_button {
@@ -124,87 +117,85 @@ img {
   box-sizing: border-box;
 }
 
+#longislandsound {
+  border: 10px solid #393939;
+  box-sizing: border-box;
+  max-width: 220px;
+}
+
 .links {
   font-size: 2.5em;
   letter-spacing: 0.2em;
-  margin-bottom: 2em;
   text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 7em;
+  margin: 0 auto 2em auto;
 }
 
 .links a {
   color: #CDCCBD;
 }
-.links a:hover {
-  color: #ADAC9D;
+
+.fa-bandcamp:hover {
+  color: #629AA9 !important;
+}
+
+.fa-apple:hover {
+  color: #FA243B !important;
+}
+
+.fa-spotify:hover {
+  color: #1ed760 !important;
+}
+
+.fa-lastfm:hover {
+  color: #CF0E06 !important;
 }
 
 /* Bottom columns */
 
-#longislandsound {
-  max-width: 200px;
-  border: 10px solid #393939;
+.bottom {
+  font-size: 0.7em;
+  color: #AAA;
 }
 
-.three p {
-  font-size: 0.8em;
-  letter-spacing: 1;
-  margin: 0;
-  color: #aaa;
+.bottom .column {
+  max-width: 20em;
 }
 
-.three a {
+.bottom a {
   color: #7B7B78;
 }
 
-.three a:hover {
+.bottom a:hover {
   color: #5F5F5E;
 }
 
-#contact p {
-  font-size: 0.7em;
-  margin: 0.5em 0;
-}
-
-p.press {
-  background: url('/img/download.png') left no-repeat;
-  height: 56px;
-  width: 200px;
-  margin: 0 auto;
-  padding-left: 65px;
-  text-align: left;
-  font-size: 0.7em;
-}
-
-p.press a {
-  letter-spacing: 0.8;
-  font-weight: bold;
+.bottom .links {
+  font-size: 3em;
 }
 
 /* Media queries */
 
-@media screen and (max-width: 800px) {
-  img {
-    max-width: 400px;
-    margin-bottom: 2em;
-  }
+@media screen and (max-width: 1100px) {
   .container {
-    width: 96%;
-    padding: 0 2%;
+    flex-direction: column;
+    max-width: 98%;
   }
-  .column, .three {
-    width: 100%;
+
+  .column {
+    width: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
   }
-  
+
   body {
-    font-size: 1em;
-  }
-  
-  p.press, #contact p {
-    font-size: 1em;
+    font-size: 1.3em;
   }
   
   h4 {
     font-size: 2.7em;
-    margin: 1em 0 0.2em 0;
   }
 }
